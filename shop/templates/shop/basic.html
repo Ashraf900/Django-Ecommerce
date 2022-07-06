@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% block titile %} {% endblock %}</title>
+    <style>
+          {% block css %} {% endblock %}
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+     
+  </head>
+  <body>
+    {% load static %}
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid ">
+        <a class="navbar-brand text-primary" href="/shop">My Awesome Cart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2  mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/shop">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/about">AboutUs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/tracker">Tracker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/contact">ContactUs</a>
+            </li>
+            
+            
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+         </form>
+         
+            {% comment %} <button type="button" class="btn btn-secondary mx-2" id = "popcart" data-bs-toggle="popover" data-bs-container = "body" data-bs-html= "true" data-bs-content="Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus.">
+
+            Cart(<span id="cart">0</span>)
+            </button>    {% endcomment %}
+            <button type="button" class="btn btn-primary w-5" id= "popcart" style="margin-left: 0.5rem!important; z-index:100!important" data-bs-container="body" data-bs-toggle="popover" data-bs-html= "true" data-bs-placement="bottom" >
+              Cart(<span id="cart">0</span>)
+            </button>
+        </div>
+      </div>
+    </nav>
+    {% block body %}
+     {% endblock %}
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+  
+     {% block js %}
+      {% endblock %}
+  </body>
+
+</html>
